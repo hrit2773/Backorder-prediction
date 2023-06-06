@@ -90,6 +90,8 @@ class DataTransformation:
             test_trans_new=pd.concat([test[test['went_on_backorder']=='No'].sample(2688,random_state=150),test[test['went_on_backorder']=='Yes']],axis=0)
             X_test_new=test_trans_new.drop(['went_on_backorder'],axis=1)
             Y_test_new=test_trans_new['went_on_backorder']
+            X_test_new.columns=trans.columns
+            Y_test_new=np.where(Y_test_new=='Yes',1,0)
             logging.info("Data transformation is completed")
             
             return (
