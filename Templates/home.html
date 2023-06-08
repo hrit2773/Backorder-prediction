@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"> 
+        <form action="{{url_for('predict_datapoint')}}" method="post">
+            <h3>potential_issue:</h3>
+            <select name="potential_issue" type="text" placeholder="potential_issue">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <br>
+            <h3>deck_risk:</h3>
+            <select name="deck_risk" placeholder="deck_risk">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+                
+            <h3>oe_constraint:</h3>
+            <select name="oe_constraint" placeholder="oe_constraint">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>ppap_risk:</h3>
+            <select name="ppap_risk" placeholder="ppap_risk">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>stop_auto_buy:</h3>
+            <select name="stop_auto_buy" placeholder="stop_auto_buy">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>rev_stop:</h3>
+            <select name="rev_stop" placeholder="rev_stop">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+                
+            <h3>national_inv:</h3>
+            <input type="number" step="any" name="national_inv">
+            <h3>lead_time:</h3>
+            <input type="number" step="any" name="lead_time">
+            <h3>in_transit_qty:</h3>
+            <input type="number" step="any" name="in_transit_qty">
+            <h3>forecast_3_month:</h3>
+            <input type="number" step="any" name="forecast_3_month">
+            <h3>sales_1_month:</h3>
+            <input type="number" step="any" name="sales_1_month">
+            <h3>pieces_past_due:</h3>
+            <input type="number" step="any" name="pieces_past_due">
+            <h3>perf_12_month_avg:</h3>
+            <input type="number" step="any" name="perf_12_month_avg">
+            <h3>local_bo_qty:</h3>
+            <input type="number" step="any" name="local_bo_qty"><br><hr>
+            <input type="submit" value="predict">
+
+            
+
+        </form>
+        <h1>Went on Backorder:{{results}}</h1>
+    </div>
+</body>
+</html>

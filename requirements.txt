@@ -5,4 +5,5 @@ scikit-learn
 imblearn
 dill
 xgboost
+flask
 -e .

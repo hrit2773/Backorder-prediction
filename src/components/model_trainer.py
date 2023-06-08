@@ -34,10 +34,11 @@ class model_training:
             save_object(self.model_training_config.xgb_model_path,self.xgb)
             logging.info("XgBoost trained and saved successfully")
             logging.info("Model testing initiated")
-            final_prediction=Threshold(self.lr,self.rf,self.xgb,test_data_input,test_data_output)
+            final_prediction,optimal_threshold=Threshold(self.lr,self.rf,self.xgb,test_data_input,test_data_output)
             f1Score=f1_score(test_data_output,final_prediction,average='macro')
+            save_object(os.path.join('artifacts','threshold.pkl'),optimal_threshold)
             logging.info("Model testing is completed")
-            return f1Score
+            return (f1Score,optimal_threshold)
         except Exception as e:
             raise CustomException(e,sys)
         

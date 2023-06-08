@@ -16,6 +16,7 @@ from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts','preprocessor.pkl')
+    scaler_file_path=os.path.join('artifacts','Scaler.pkl')
     
 class DataTransformation:
     def __init__(self):
@@ -84,6 +85,7 @@ class DataTransformation:
             trans=pd.concat([X_res.iloc[:,0:6],scaled],axis=1)
             test_scaled=pd.DataFrame(s.transform(X_test_trans.iloc[:,6:]),columns=['national_inv','lead_time','in_transit_qty','forecast_3_month','sales_1_month','pieces_past_due','perf_12_month_avg','local_bo_qty'])
             test_trans=pd.concat([X_test_trans.iloc[:,0:6],test_scaled],axis=1)
+            save_object(self.data_transformation_config.scaler_file_path,s)
             logging.info("Standard scaling is done")
             trans.columns=['potential_issue','deck_risk','oe_constraint','ppap_risk','stop_auto_buy','rev_stop','national_inv','lead_time','in_transit_qty','forecast_3_month','sales_1_month','pieces_past_due','perf_12_month_avg','local_bo_qty']
             test=pd.concat([test_trans,Y_test],axis=1)
