@@ -9,11 +9,11 @@ from src.utils import load_object
 from src.exception import CustomException
 class predict_pipeline:
     def __init__(self):
-        self.lr_path='artifacts\LogisticRegression.pkl'
-        self.rf_path='artifacts\RandomForest.pkl'
-        self.xgb_Path='artifacts\XgBoost.pkl'
-        self.Scale_path='artifacts\Scaler.pkl'
-        self.thres_path='artifacts\\threshold.pkl'
+        self.lr_path='//home//ubuntu//artifacts//LogisticRegression.pkl'
+        self.rf_path='//home//ubuntu//artifacts//RandomForest.pkl'
+        self.xgb_Path='//home//ubuntu//artifacts//XgBoost.pkl'
+        self.Scale_path='//home//ubuntu//artifacts//Scaler.pkl'
+        self.thres_path='//home//ubuntu//artifacts//threshold.pkl'
     def predict(self,features):
         try:
             features.iloc[:,0]=np.where(features.iloc[:,0]=='Yes',1,0)
