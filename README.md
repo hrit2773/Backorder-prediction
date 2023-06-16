@@ -8,4 +8,5 @@
 <p>Templates folder---Contains the html files.</p><hr>
 <p><p>src folder---consists of several sub folders like 'components', 'pipeline'</p><br>
   <p>components folder---Consists of 'data ingestion.py' in which the train and test datasets are loaded, consists of 'data_transformation.py' which contains the whole code for feature engineering, consists of 'model_trainer.py' which contains the code for training the machine learning models such as Logistic regression,RandomForest and Xgboost</p>
-</p>
+</p><hr>
+<p></p>
