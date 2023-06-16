@@ -10,5 +10,6 @@
   <p>components folder---Consists of 'data ingestion.py' in which the train and test datasets are loaded, consists of 'data_transformation.py' which contains the whole code for feature engineering, consists of 'model_trainer.py' which contains the code for training and testing the machine learning models such as Logistic regression,RandomForest and Xgboost.</p><br>
   <p>pipeline folder---Consists of 'predict_pipeline.py' which contains the code that takes the data given by the web app user and predicts the output(went_on_backorder:Yes or No).</p>
 </p><hr>
+<p>artifacts folder--- contains all the pickle files loaded during the data ingestion, data transformation and model training process which are useful for prediction pipeline</p>
 <h1>The End</h1>
 
