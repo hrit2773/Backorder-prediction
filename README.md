@@ -7,6 +7,8 @@
 <p>app.py---Contains the code for the web app(Flask)</p><hr>
 <p>Templates folder---Contains the html files.</p><hr>
 <p><p>src folder---consists of several sub folders like 'components', 'pipeline'</p><br>
-  <p>components folder---Consists of 'data ingestion.py' in which the train and test datasets are loaded, consists of 'data_transformation.py' which contains the whole code for feature engineering, consists of 'model_trainer.py' which contains the code for training the machine learning models such as Logistic regression,RandomForest and Xgboost</p>
+  <p>components folder---Consists of 'data ingestion.py' in which the train and test datasets are loaded, consists of 'data_transformation.py' which contains the whole code for feature engineering, consists of 'model_trainer.py' which contains the code for training and testing the machine learning models such as Logistic regression,RandomForest and Xgboost</p><br>
+  <p>pipeline folder---Consists of 'predict_pipeline.py' which contains the code that takes the data given by the web app user and predicts the output(went_on_backorder:Yes or No)</p>
 </p><hr>
-<p></p>
+<h1>The End</h1>
+
